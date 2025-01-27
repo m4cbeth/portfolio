@@ -1,5 +1,6 @@
 'use server'
 import { signIn, auth, signOut } from '../../auth'
+import Image from 'next/image'
 
 async function githubSignIn() {
   'use server'

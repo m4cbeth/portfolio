@@ -1,3 +1,6 @@
+import daisyui from 'daisyui'
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,6 +9,10 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['var(--font-geist)'],
+      mono: ['var(--font-geist-mono)']
+    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -13,5 +20,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    daisyui,
+  ],
 };
