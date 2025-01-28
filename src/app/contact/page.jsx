@@ -42,7 +42,7 @@ async function getMessages(email) {
     return messages
 }
 
-const PrevMessages = ({leftMessages}) => (
+const PrevMessages = ({messages}) => (
     <div>
     <h2 className="text-3xl font-thin">Previous Messages</h2>
         <Table>
@@ -50,17 +50,19 @@ const PrevMessages = ({leftMessages}) => (
         <TableHeader>
             <TableRow>
             <TableHead className="w-[100px]">From</TableHead>
-            <TableHead>Sent On</TableHead>
             <TableHead>Message</TableHead>
+            <TableHead>Sent On</TableHead>
+            <TableHead>Email</TableHead>
             <TableHead className="text-right">Status</TableHead>
             </TableRow>
         </TableHeader>
         <TableBody>
-        {leftMessages.map((message, index) => (
+        {messages.map((message, index) => (
             <TableRow key={index}>
-            <TableCell className="font-medium">{message.name}</TableCell>
-            <TableCell>{message.createdAt.slice(0,10)}</TableCell>
+            <TableCell>{message.name}</TableCell>
             <TableCell>{message.message}</TableCell>
+            <TableCell>{message.createdAt.toString().slice(4,15)}</TableCell>
+            <TableCell>{message.email}</TableCell>
             <TableCell className="text-right">received</TableCell>
             </TableRow>
         ))}
@@ -73,19 +75,20 @@ const PrevMessages = ({leftMessages}) => (
 export default async function Contact() {
     
     const session = await auth()
-
-    let leftMessages = null
-    if (session.user){
-        leftMessages = await getMessages(session.user.email)
-        console.log(leftMessages)
-    }
-
+    const leftMessages = await getMessages(session.user?.email || "") || []
+    
 
     
     return (
-        <div>
-            
-            {leftMessages && <PrevMessages messages={leftMessages}/>}
+        <div>            
+            <pre>{JSON.stringify(leftMessages,0,9)}</pre>
+            <pre>{JSON.stringify(await getMessages(session.user.email))}</pre>
+            <div>
+                {/* {Array.isArray(leftMessages) && leftMessages.length > 0 ? leftMessages.map( (x, i) => x.message) : ( */}
+                {Array.isArray(leftMessages) && leftMessages.length > 0 ? <PrevMessages messages={leftMessages} /> : (
+                    "npoe"
+                )}
+            </div>
             <form action={submitForm} className="flex flex-col gap-4 p-5">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" name="name" className="bg-slate-900" />
