@@ -1,16 +1,7 @@
 'use server';
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from './header'
 
 export async function generateMetadata({params}) {
   return {
@@ -19,11 +10,19 @@ export async function generateMetadata({params}) {
 }
 
 export default async function RootLayout({ children }) {
-  'use server'
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        {children}
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* TODO MAKE A MAIN CONTAINER flex-col; header/children/footer */}
+            <Header/>
+            {children}
+        </ThemeProvider>
       </body>
     </html>
   );
