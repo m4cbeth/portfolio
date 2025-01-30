@@ -24,7 +24,7 @@ export default async function Header({ThemeButton}) {
             <div>
                 <ThemeButton/>
             </div>
-            <div className="pr-2 lg:pr-10 my-2 ml-3">
+            <div className="pr-2 lg:pr-10 my-2 ml-3 font-">
                 {!!session ? 
                 <SignOut /> :
                 <div><SignInWithGoogle/><SignInWithGithub/></div>
