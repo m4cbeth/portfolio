@@ -4,13 +4,13 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function ThemeButton() {
-    const [theme, setTheme] = useTheme("dark")
+    const {theme, setTheme} = useTheme("dark")
     const changeTheme = () => setTheme(theme == 'dark' ? 'light' : 'dark')
     return (
         <div>
             <Button onClick={()=>changeTheme()} variant="outline" size="icon" className="bg-white dark:bg-black">
-                <Sun className={`h-[1.2rem] w-[1.2rem] rotate-0 dark:scale-0 transition-all`} />
-                <Moon className={`absolute h-[1.2rem] w-[1.2rem] dark:scale-100 dark:rotate-0 transition-all rotate-90`} />
+                <Sun className={`h-[1.2rem] w-[1.2rem] rotate-0 dark:scale-0 transition`} />
+                <Moon className={`absolute h-[1.2rem] w-[1.2rem] dark:scale-100 scale-0 dark:rotate-0 transition rotate-90`} />
                 <span className="sr-only">Toggle theme</span>
             </Button>
         </div>

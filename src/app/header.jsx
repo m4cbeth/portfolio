@@ -1,13 +1,16 @@
-import Link from 'next/link'
-import SignInButton from '@/components/made-components/signinbutton'
+'use server'
 import { SignOut } from '@/components/signout-button'
+import NavMenuItems from '@/components/made-components/navmenu';
+import Link from 'next/link'
+import { SignInWithGithub, SignInWithGoogle } from '@/components/made-components/signinbuttons';
+
 
 import { auth } from '@/auth'
 
-export default async function Header() {
+export default async function Header({ThemeButton}) {
     const session = await auth()
     return (
-        <div className={`flex items-center justify-start top-0 sticky bg-black dark:bg-white z-[99999999999]`}>
+        <div className={`flex items-center justify-start top-0 sticky z-[99999999999]`}>
             <Link className='no-underline  pr-2 lg:pr-5 lg:pl-5' href="/">
                 <div className="font-extralight text-3xl hover:text-secondary transition ease-out pb-2">
                     JW
@@ -18,11 +21,15 @@ export default async function Header() {
                     <NavMenuItems/>
                 </div>
             </div>
-            {/* gggggg */}
+            <div>
+                <ThemeButton/>
+            </div>
             <div className="pr-2 lg:pr-10 my-2 ml-3">
                 {!!session ? 
                 <SignOut /> :
-                <SignInButton />}
+                <div><SignInWithGoogle/><SignInWithGithub/></div>
+                // "frit"
+                }
             </div>
             <div>
                 {!!session ?
@@ -35,11 +42,3 @@ export default async function Header() {
 }
 
 
-const NavMenuItems = () => (
-    <div className="md:pb-0 text-nowrap">
-        <Link href="/"        className="no-underline text-lg md:text-lg hover:text-accent">HOME</Link > &nbsp;| &nbsp;
-        <Link href="/about"   className="no-underline text-lg md:text-lg hover:text-accent">ABOUT</Link > &nbsp;| &nbsp;
-        <Link href="/projects"   className="no-underline text-lg md:text-lg hover:text-accent">PROJECTS</Link > &nbsp;| &nbsp;
-        <Link href="/contact" className="no-underline text-lg md:text-lg hover:text-accent">CONTACT</Link >
-    </div>
-)

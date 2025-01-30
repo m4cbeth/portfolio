@@ -96,7 +96,7 @@ export default async function Contact() {
                 <h1 className="text-5xl font-black">
                 Get in touch!
                 </h1>
-                <h2 className="text-3xl font-thin">
+                <h2 className="text-3xl font-black">
                 Drop a line online
                 </h2>
                 <div className="flex justify-center gap-10 p-5">

@@ -2,6 +2,7 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from './header'
+import ThemeButton from "./themebutton";
 
 export async function generateMetadata({params}) {
   return {
@@ -14,16 +15,24 @@ export default async function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body>
       <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {/* TODO MAKE A MAIN CONTAINER flex-col; header/children/footer */}
-            <Header/>
-            {children}
-        </ThemeProvider>
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+        header={Header}
+      >
+          <Header ThemeButton={ThemeButton} />
+          {children}
+          <Footer />
+      </ThemeProvider>
+
       </body>
     </html>
   );
 }
+
+const Footer = () => (
+  <div className="flex justify-center p-3">
+    &copy;{(new Date).toString().slice(10,15)} Jaren Whitehouse
+  </div>
+)
