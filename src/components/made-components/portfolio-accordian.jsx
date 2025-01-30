@@ -21,7 +21,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 
-const iconSize = 39
+const iconSize = 33
 
 export default function PortAcc() {
     const accordItems = [
@@ -44,7 +44,7 @@ export default function PortAcc() {
             {accordItems.map((tech,i) => {
                 return (                                      
                     <AccordionItem  key={i} value={"item-"+i}>
-                        <AccordionTrigger className="text-2xl font-light">
+                        <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
                         <AccordionContent className="text-lg">
