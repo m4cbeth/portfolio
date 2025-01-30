@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 export default async function NavMenuItems(){
-    'use server'
     return (
         <div className="md:pb-0 text-nowrap">
             <Link href="/"        className="no-underline text-lg md:text-lg hover:text-accent">HOME</Link > &nbsp;| &nbsp;

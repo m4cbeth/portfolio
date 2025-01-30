@@ -10,7 +10,7 @@ import { auth } from '@/auth'
 export default async function Header({ThemeButton}) {
     const session = await auth()
     return (
-        <div className={`flex items-center justify-start top-0 sticky z-[99999999999]`}>
+        <div className=' p-2 flex items-center justify-start top-0 sticky z-[99999999999] bg-[hsl(var(--background))]'>
             <Link className='no-underline  pr-2 lg:pr-5 lg:pl-5' href="/">
                 <div className="font-extralight text-3xl hover:text-secondary transition ease-out pb-2">
                     JW
@@ -28,12 +28,11 @@ export default async function Header({ThemeButton}) {
                 {!!session ? 
                 <SignOut /> :
                 <div><SignInWithGoogle/><SignInWithGithub/></div>
-                // "frit"
                 }
             </div>
             <div>
                 {!!session ?
-                <img className='rounded-full mr-5' src={session.user.image} width={50} height={50} alt={session.user.name}/> :
+                <img className='rounded-full mr-5' src={session.user.image} width={30} height={30} alt={session.user.name}/> :
                 ""
                 }
             </div>
