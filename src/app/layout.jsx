@@ -31,8 +31,7 @@ export default async function RootLayout({ children }) {
           <Header ThemeButton={ThemeButton} />
           {children}
           <Footer />
-          <div className='md:hidden bg-inherit py-5 sticky bottom-0 w-full z-[9999999999999] flex justify-center align-middle'>
-            {/* <NavMenuItems className="py-10" /> */}
+          <div className='md:hidden bg-inherit py-5 sticky bottom-0 border w-full z-[9999999999999] flex justify-center align-middle'>
             <BottomNav/>
           </div>
       </ThemeProvider>

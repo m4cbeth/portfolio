@@ -10,7 +10,7 @@ import { auth } from '@/auth'
 export default async function Header({ThemeButton}) {
     const session = await auth()
     return (
-        <div className=' p-2 flex items-center justify-start top-0 sticky z-[99999999999] bg-[hsl(var(--background))]'>
+        <div className='border-b p-2 flex items-center justify-start top-0 sticky z-[99999999999] bg-[hsl(var(--background))]'>
             <Link className='no-underline  pr-2 lg:pr-5 lg:pl-5' href="/">
                 <div className="font-extralight text-3xl hover:text-secondary transition ease-out pb-2">
                     JW
