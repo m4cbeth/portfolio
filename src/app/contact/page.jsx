@@ -7,6 +7,10 @@ import {Table,TableBody,TableCaption,TableCell,TableHead,TableHeader,TableRow} f
 import { auth } from "@/auth"
 import { revalidatePath } from "next/cache"
 import prisma from "@/lib/prisma"
+import { Input } from '@/components/ui/input'
+import { Textarea } from "@/components/ui/textarea"
+
+
 
 async function submitForm(formData) {
     'use server'
@@ -114,12 +118,10 @@ export default async function Contact() {
                     Or if you&apos;ve got a question, ask away!
                 </h2>
                 <form action={submitForm} className="flex flex-col gap-4 p-5">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" className="bg-slate-900" />
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" className="bg-slate-900" />
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" rows={10} className="bg-slate-900"></textarea>
+                    <Input id='name' name='name' type="text" placeholder="Name" />
+                    <Input id='email' name='email' type="email" placeholder="Email" />
+                    <Input id='message' name='message' type="text" placeholder="Please leave your damn message" />
+                    <Textarea />
                     <button type="submit">Send</button>
                 </form>
                 <div>

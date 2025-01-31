@@ -13,6 +13,12 @@ import { SiExpress } from "react-icons/si";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarHalf } from "react-icons/md";
+import { SiVercel } from "react-icons/si";
+import { SiHeroku } from "react-icons/si";
+import { SiNetlify } from "react-icons/si";
+import { SiRender } from "react-icons/si";
+import { SiWordpress } from "react-icons/si";
+
 
 import {
     Accordion,
@@ -23,31 +29,31 @@ import {
 
 const iconSize = 33
 
-export default function PortAcc() {
-    const accordItems = [
-    {icon: <FaHtml5 className="transition-all" size={iconSize}/>, name: "HTML", body: htmlBody()},
-    {icon: <FaJs className="transition-all" size={iconSize}/>, name: "JavaScript",body:  jsBody()},
-    {icon: <FaCss3 className="transition-all" size={iconSize}/>, name: "CSS", body: cssBody()},
-    {icon: <FaReact className="transition-all" size={iconSize}/>, name: "React", body: "Body"},
-    {icon: <FaNodeJs className="transition-all" size={iconSize}/>, name: "Node", body: "Body"},
-    {icon: <RiNextjsFill className="transition-all" size={iconSize}/>, name: "Next.js", body: "Body"},
-    {icon: <RiTailwindCssFill className="transition-all" size={iconSize}/>, name: "Tailwind CSS", body: "Body"},
-    {icon: <SiFirebase className="transition-all" size={iconSize}/>, name: "Firebase",body:  fireBody()},
-    {icon: <FaGitAlt className="transition-all" size={iconSize}/>, name: "Git", body: "Body"},
-    {icon: <SiExpress className="transition-all" size={iconSize}/>, name: "Express", body: expressBody() },
-    {icon: <DiPostgresql className="transition-all -translate-x-2" size={iconSize*1.4}/>, name: "PostgreSQL", body: postgresBody()},
-    {icon: <SiPrisma className="transition-all" size={iconSize}/>, name: "Prisma", body: "Prismabody"},
-]
+export default async function PortAcc() {
+    const techAccordianItems = [
+        {icon: <FaHtml5 className="transition-all" size={iconSize}/>, name: "HTML", body: htmlBody()},
+        {icon: <FaJs className="transition-all" size={iconSize}/>, name: "JavaScript",body:  jsBody()},
+        {icon: <FaCss3 className="transition-all" size={iconSize}/>, name: "CSS", body: cssBody()},
+        {icon: <FaReact className="transition-all" size={iconSize}/>, name: "React", body: reactBody()},
+        {icon: <FaNodeJs className="transition-all" size={iconSize}/>, name: "Node", body: nodeBody()},
+        {icon: <RiNextjsFill className="transition-all" size={iconSize}/>, name: "Next.js", body: "Body"},
+        {icon: <RiTailwindCssFill className="transition-all" size={iconSize}/>, name: "Tailwind CSS", body: "Body"},
+        {icon: <SiFirebase className="transition-all" size={iconSize}/>, name: "Firebase",body:  fireBody()},
+        {icon: <FaGitAlt className="transition-all" size={iconSize}/>, name: "Git", body: "Body"},
+        {icon: <SiExpress className="transition-all" size={iconSize}/>, name: "Express", body: expressBody() },
+        {icon: <DiPostgresql className="transition-all -translate-x-2" size={iconSize*1.4}/>, name: "PostgreSQL", body: postgresBody()},
+        {icon: <SiPrisma className="transition-all" size={iconSize}/>, name: "Prisma", body: "Prismabody"},
+    ]
     return (
         <div className="container max-w-3xl mx-auto">
             <Accordion type="single" collapsible>
-            {accordItems.map((tech,i) => {
+            {techAccordianItems.map((tech,i) => {
                 return (                                      
                     <AccordionItem  key={i} value={"item-"+i}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
-                        <AccordionContent className="text-lg">
+                        <AccordionContent className="">
                             {tech.body}
                         </AccordionContent>
                     </AccordionItem>
@@ -57,6 +63,43 @@ export default function PortAcc() {
         </div>
     )
 }
+
+export async function TechAccordian(params) {
+    
+    const platformAccordianItems = [
+        {icon: <SiVercel className="transition-all" size={iconSize}/>, name: "Vercel", body: "Body"},
+        {icon: <SiNetlify   className="transition-all" size={iconSize}/>, name: "Netlify", body: "Body"},
+        {icon: <SiFirebase  className="transition-all" size={iconSize}/>, name: "Firebase", body: "Body"},
+        {icon: <SiRender    className="transition-all" size={iconSize}/>, name: "Render", body: "Body"},
+        {icon: <SiHeroku  className="transition-all" size={iconSize}/>, name: "Herkoku", body: "Body"},
+        {icon: <SiWordpress   className="transition-all" size={iconSize}/>, name: "Wordpress", body: "Body"},
+    ]
+
+    return (
+        <div className="container max-w-3xl mx-auto">
+            <Accordion type="single" collapsible>
+            {platformAccordianItems.map((plat,i) => {
+                return (                                      
+                    <AccordionItem  key={i} value={"item-"+i}>
+                        <AccordionTrigger className="text-2xl font-thin">
+                            {plat.icon}{plat.name}
+                        </AccordionTrigger>
+                        <AccordionContent className="">
+                            {plat.body}
+                        </AccordionContent>
+                    </AccordionItem>
+                )
+            })}
+            </Accordion>
+        </div>
+    )
+}
+
+
+
+
+
+
 
 const htmlBody = () => (
 <div>
@@ -103,6 +146,14 @@ const reactBody = () => (
         to Redux (you&apos;ll notice it&apos;s not on this list).
     </p>
 
+</div>
+)
+const nodeBody = () => (
+<div>
+    {stars(3.5)}
+    Node.js, the beast that brought js off the browser. I don&apos;t know node as well as I&apos;d like to, as there are I'm sure
+    countless cool features I have yet to discover or learn. However, I do know js very well, so where a lot of developers might
+    lean on bash to write a quick script, or test a small function, I will fire up a terminal and type in &apos;node&apos; and go!
 </div>
 )
 const expressBody = () => (

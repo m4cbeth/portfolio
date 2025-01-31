@@ -2,7 +2,9 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from './header'
-import ThemeButton from "./themebutton";
+import ThemeButton from "./themebutton"
+import NavMenuItems, { BottomNav } from '@/components/made-components/navmenu';
+
 
 export async function generateMetadata({params}) {
   return {
@@ -29,6 +31,10 @@ export default async function RootLayout({ children }) {
           <Header ThemeButton={ThemeButton} />
           {children}
           <Footer />
+          <div className='md:hidden bg-inherit py-5 sticky bottom-0 w-full z-[9999999999999] flex justify-center align-middle'>
+            {/* <NavMenuItems className="py-10" /> */}
+            <BottomNav/>
+          </div>
       </ThemeProvider>
 
       </body>
