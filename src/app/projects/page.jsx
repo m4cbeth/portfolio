@@ -1,9 +1,14 @@
-
+import Link from 'next/link'
 
 export default async function Projects() {
     return (
         <div>
-            Hello Projects
+            <div>
+                Hello Projects
+            </div>
+            <div>
+                <Link href="/projects/hiragana">Hiragana</Link>
+            </div>
         </div>
     )
 }
