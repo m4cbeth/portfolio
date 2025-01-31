@@ -11,14 +11,14 @@ export default function About() {
                 <h2 className=" font-thin text-3xl pb-5">
                     My Current Strong Suites
                 </h2>
-                <div className="grid grid-rows-2 md:grid-cols-2 gap-10">
-                    <div className="">
+                <div className="flex flex-col md:flex-row md:justify-center gap-10 mx-10">
+                    <div className="flex-1">
                         <h2 className="text-center font-thin text-2xl pb-5">
                             Tech Experience
                         </h2>
                         <TechAccordian className="size-10" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                         <h2 className="text-center font-thin text-2xl pb-5">
                             Deployment Experience
                         </h2>
