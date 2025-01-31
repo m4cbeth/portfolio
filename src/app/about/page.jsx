@@ -2,7 +2,7 @@ import { TechAccordian, PlatformAccordian } from "@/components/made-components/p
 
 export default function About() {
     return (               
-        <div className="">
+        <div className="mx-5">
             <title>About Jaren</title>
             <h1 className="text-5xl font-black pt-3">
                 about me
@@ -11,7 +11,7 @@ export default function About() {
                 <h2 className=" font-thin text-3xl pb-5">
                     My Current Strong Suites
                 </h2>
-                <div className="grid grid-rows-2 md:grid-cols-2 gap-10 mx-5">
+                <div className="grid grid-rows-2 md:grid-cols-2 gap-10">
                     <div className="">
                         <h2 className="text-center font-thin text-2xl pb-5">
                             Tech Experience

@@ -124,7 +124,6 @@ export default async function Contact() {
                     <button type="submit">Send</button>
                 </form>
                 <div>
-                    {console.log(session?.user)}
                     {Array.isArray(leftMessages) && 
                     leftMessages.length > 0 ? 
                     <PrevMessages messages={leftMessages} /> 

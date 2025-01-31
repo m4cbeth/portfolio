@@ -49,7 +49,7 @@ export async function TechAccordian() {
             <Accordion type="single" collapsible>
             {techAccordianItems.map((tech,i) => {
                 return (                                      
-                    <AccordionItem  key={i} value={"item-"+i}>
+                    <AccordionItem  key={i+2} value={"item-"+i}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
@@ -80,7 +80,7 @@ export async function PlatformAccordian(params) {
             <Accordion type="single" collapsible>
             {platformAccordianItems.map((plat,index) => {
                 return (                                      
-                    <AccordionItem  key={index} value={"item-"+index}>
+                    <AccordionItem  key={index*2} value={"item-"+index}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {plat.icon}{plat.name}
                         </AccordionTrigger>
