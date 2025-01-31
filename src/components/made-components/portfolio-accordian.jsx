@@ -34,12 +34,12 @@ export async function TechAccordian() {
         {icon: <FaHtml5 className="transition-all" size={iconSize}/>, name: "HTML", body: htmlBody()},
         {icon: <FaJs className="transition-all" size={iconSize}/>, name: "JavaScript",body:  jsBody()},
         {icon: <FaCss3 className="transition-all" size={iconSize}/>, name: "CSS", body: cssBody()},
-        {icon: <FaReact className="transition-all" size={iconSize}/>, name: "React", body: reactBody()},
         {icon: <FaNodeJs className="transition-all" size={iconSize}/>, name: "Node", body: nodeBody()},
-        {icon: <RiNextjsFill className="transition-all" size={iconSize}/>, name: "Next.js", body: "Body"},
-        {icon: <RiTailwindCssFill className="transition-all" size={iconSize}/>, name: "Tailwind CSS", body: "Body"},
+        {icon: <FaReact className="transition-all" size={iconSize}/>, name: "React", body: reactBody()},
         {icon: <SiFirebase className="transition-all" size={iconSize}/>, name: "Firebase",body:  fireBody()},
-        {icon: <FaGitAlt className="transition-all" size={iconSize}/>, name: "Git", body: "Body"},
+        {icon: <RiNextjsFill className="transition-all" size={iconSize}/>, name: "Next.js", body: nextBody()},
+        {icon: <RiTailwindCssFill className="transition-all" size={iconSize}/>, name: "Tailwind CSS", body: tailwindBody()},
+        {icon: <FaGitAlt className="transition-all" size={iconSize}/>, name: "Git", body: gitBody()},
         {icon: <SiExpress className="transition-all" size={iconSize}/>, name: "Express", body: expressBody() },
         {icon: <DiPostgresql className="transition-all -translate-x-2" size={iconSize*1.4}/>, name: "PostgreSQL", body: postgresBody()},
         {icon: <SiPrisma className="transition-all" size={iconSize}/>, name: "Prisma", body: "Prismabody"},
@@ -53,7 +53,7 @@ export async function TechAccordian() {
                         <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
-                        <AccordionContent className="text-lg">
+                        <AccordionContent className="text-lg font-light">
                             {tech.body}
                         </AccordionContent>
                     </AccordionItem>
@@ -84,7 +84,7 @@ export async function PlatformAccordian(params) {
                         <AccordionTrigger className="text-2xl font-thin">
                             {plat.icon}{plat.name}
                         </AccordionTrigger>
-                        <AccordionContent className="text-lg">
+                        <AccordionContent className="text-lg font-light">
                             {plat.body}
                         </AccordionContent>
                     </AccordionItem>
@@ -154,6 +154,36 @@ const nodeBody = () => (
     Node.js, the beast that brought js off the browser. I don&apos;t know node as well as I&apos;d like to, as there are I'm sure
     countless cool features I have yet to discover or learn. However, I do know js very well, so where a lot of developers might
     lean on bash to write a quick script, or test a small function, I will fire up a terminal and type in &apos;node&apos; and go!
+</div>
+)
+const nextBody = () => (
+<div>
+    {stars(4.5)}
+    I was late to adopt Next.js. I didn&apos;t have much concern for SSR and SEO. It seemed to me at the time, that making something,
+    either you want to make it interactive, or you want to optimize for search. Why would you try to combine the two? However, I slowly
+    learned all of the advantages of the metaframework, and began to build projects with it (this website for example).<br/>
+    But now, being an early adopter of the new paradigm of Next 13 and onward, I feel very strong in my Next abilities.
+</div>
+)
+const tailwindBody = () => (
+<div>
+    {stars(5)}
+    Tailwind is one of those things you will hear 1000 times, &quot;once you try it, you will never go back&quot;. But I scoffed. I said I would
+    never be one of those people. I hated the ugly, verbose, at times, cryptic nature of it. I wanted nothing to do with it.<br/>
+    However, CSS has been a nearly life long struggle for me. Semantic CSS, BEM, styled components, no matter the approach, as projects 
+    got larger, the CSS always became increasingly unmanagable.<br/>
+    Until I finally gave in and tried TailwindCSS.<br/>
+    Within an hour I was understanding why people loved it, and I was immediately in love. Tailwind has been at the heart of my styling
+    strategy ever since.
+</div>
+)
+const gitBody = () => (
+<div>
+    I learned the basics of git a long time ago, and for a long time used it for nothing more than cloning, forking, basic tracking (the
+    classic amateur git add . && git commit -m "beign message" && git push, that accomplishes almost nothing). But then I started to push 
+    myself to branch out a little bit, pun intended! For the past while, I've been getting into the practice of using branches to organize
+    the work being done on a project. Previously, I'd be haphazardly making changes to 10 different files for 20 different reasons and 
+    making commits with messages like, "have no clue, forgot what I&apos;m even doing".
 </div>
 )
 const expressBody = () => (
