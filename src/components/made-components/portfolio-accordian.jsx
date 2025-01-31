@@ -29,7 +29,7 @@ import {
 
 const iconSize = 33
 
-export default async function PortAcc() {
+export async function TechAccordian() {
     const techAccordianItems = [
         {icon: <FaHtml5 className="transition-all" size={iconSize}/>, name: "HTML", body: htmlBody()},
         {icon: <FaJs className="transition-all" size={iconSize}/>, name: "JavaScript",body:  jsBody()},
@@ -53,7 +53,7 @@ export default async function PortAcc() {
                         <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
-                        <AccordionContent className="">
+                        <AccordionContent className="text-lg">
                             {tech.body}
                         </AccordionContent>
                     </AccordionItem>
@@ -64,7 +64,7 @@ export default async function PortAcc() {
     )
 }
 
-export async function TechAccordian(params) {
+export async function PlatformAccordian(params) {
     
     const platformAccordianItems = [
         {icon: <SiVercel className="transition-all" size={iconSize}/>, name: "Vercel", body: "Body"},
@@ -80,11 +80,11 @@ export async function TechAccordian(params) {
             <Accordion type="single" collapsible>
             {platformAccordianItems.map((plat,index) => {
                 return (                                      
-                    <AccordionItem  key={index} value={"item-"+i}>
+                    <AccordionItem  key={index} value={"item-"+index}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {plat.icon}{plat.name}
                         </AccordionTrigger>
-                        <AccordionContent className="">
+                        <AccordionContent className="text-lg">
                             {plat.body}
                         </AccordionContent>
                     </AccordionItem>

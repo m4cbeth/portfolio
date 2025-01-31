@@ -2,7 +2,7 @@
 import { SignOut } from '@/components/signout-button'
 import NavMenuItems from '@/components/made-components/navmenu';
 import Link from 'next/link'
-import { SignInWithGithub, SignInWithGoogle } from '@/components/made-components/signinbuttons';
+import { SigninDialog } from '@/components/made-components/signin-dialog';
 
 
 import { auth } from '@/auth'
@@ -10,7 +10,7 @@ import { auth } from '@/auth'
 export default async function Header({ThemeButton}) {
     const session = await auth()
     return (
-        <div className='border-b p-2 flex items-center justify-start top-0 sticky z-[99999999999] bg-[hsl(var(--background))]'>
+        <div className='border-b p-2 flex items-center justify-start top-0 sticky z-[40] bg-[hsl(var(--background))]'>
             <Link className='no-underline  pr-2 lg:pr-5 lg:pl-5' href="/">
                 <div className="font-extralight text-3xl hover:text-secondary transition ease-out pb-2">
                     JW
@@ -27,7 +27,9 @@ export default async function Header({ThemeButton}) {
             <div className="pr-2 lg:pr-10 my-2 ml-3 font-">
                 {!!session ? 
                 <SignOut /> :
-                <div><SignInWithGoogle/><SignInWithGithub/></div>
+                <div>
+                    <SigninDialog/>
+                </div>
                 }
             </div>
             <div>
