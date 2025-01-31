@@ -94,3 +94,8 @@ code, pre {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+
+* {
+  /* border: 1px solid white; */
+}

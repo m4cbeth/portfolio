@@ -26,9 +26,14 @@ const Card = ({front, back}) => (
             <div class="flip-card-front absolute w-full h-full bg-slate-900 border flex items-center justify-center text-6xl font-light rounded-lg shadow-lg">
                 {front}
             </div>
-            <div class="flip-card-back absolute w-full h-full bg-slate-950 flex items-center justify-center text-4xl font-light rounded-lg shadow-lg">
-                {back}
-                <Button>hello</Button>
+            <div class="flip-card-back flex flex-col  absolute w-full h-full bg-slate-950 items-center justify-center text-4xl font-light rounded-lg shadow-lg">
+                <div className='h-full flex flex-col justify-center items-center'>
+                    {back}                    
+                </div>
+                <div className="w-full flex justify-around">
+                    <Button variant="destructive">knew</Button>
+                    <Button>didn&apos;t</Button>
+                </div>
             </div>
         </div>
     </div>
