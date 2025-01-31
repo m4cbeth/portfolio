@@ -100,7 +100,7 @@ export default async function Contact() {
                 <h1 className="text-5xl font-black">
                 Get in touch!
                 </h1>
-                <h2 className="text-3xl font-black">
+                <h2 className="text-3xl font-thin">
                 Drop a line online
                 </h2>
                 <div className="flex justify-center gap-10 p-5">
@@ -120,8 +120,7 @@ export default async function Contact() {
                 <form action={submitForm} className="flex flex-col gap-4 p-5">
                     <Input id='name' name='name' type="text" placeholder="Name" />
                     <Input id='email' name='email' type="email" placeholder="Email" />
-                    <Input id='message' name='message' type="text" placeholder="Please leave your damn message" />
-                    <Textarea />
+                    <Textarea id='message' name='message' type="text" placeholder="Please leave your message" />
                     <button type="submit">Send</button>
                 </form>
                 <div>

@@ -78,9 +78,9 @@ export async function TechAccordian(params) {
     return (
         <div className="container max-w-3xl mx-auto">
             <Accordion type="single" collapsible>
-            {platformAccordianItems.map((plat,i) => {
+            {platformAccordianItems.map((plat,index) => {
                 return (                                      
-                    <AccordionItem  key={i} value={"item-"+i}>
+                    <AccordionItem  key={index} value={"item-"+i}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {plat.icon}{plat.name}
                         </AccordionTrigger>
