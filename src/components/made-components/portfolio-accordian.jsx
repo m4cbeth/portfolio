@@ -19,7 +19,6 @@ import { SiNetlify } from "react-icons/si";
 import { SiRender } from "react-icons/si";
 import { SiWordpress } from "react-icons/si";
 
-
 import {
     Accordion,
     AccordionContent,
@@ -96,10 +95,9 @@ export async function PlatformAccordian(params) {
 }
 
 
-
-
-
-
+/* 
+THE WRITE UPS FOR EACH SECTION BELOW. (along with a "star" helper function for 'how well know')
+*/
 
 const htmlBody = () => (
 <div>
@@ -183,7 +181,9 @@ const gitBody = () => (
     classic amateur git add . && git commit -m "beign message" && git push, that accomplishes almost nothing). But then I started to push 
     myself to branch out a little bit, pun intended! For the past while, I've been getting into the practice of using branches to organize
     the work being done on a project. Previously, I'd be haphazardly making changes to 10 different files for 20 different reasons and 
-    making commits with messages like, "have no clue, forgot what I&apos;m even doing".
+    making commits with messages like, "have no clue, forgot what I&apos;m even doing". Also, learning the hard way, several times over
+    many years to make many small commits along the way. Save scumming if you will. Shameful perhaps in some gaming circles, but a life 
+    saver in the development world.
 </div>
 )
 const expressBody = () => (
