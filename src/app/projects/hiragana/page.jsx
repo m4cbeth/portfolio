@@ -23,6 +23,7 @@ export default function Hiragana() {
         setInput(e.target.value)
     }
     const generate = () => {
+        if (inputValue == "") return
         setArr([])
         setWon(false)
         const num = parseInt(inputValue, 10);
@@ -38,9 +39,6 @@ export default function Hiragana() {
 
     return (
         <div className='m-5 p-5'>
-            {won && <div className="z-[999999999999999999999999999999999]">
-                <Confetti  mode='boom' colors={["#3838fa", "#7997f7", "#901aaa", "#ffe6f7"]} />
-            </div>}
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
             <div className="flex gap-5">
@@ -58,6 +56,7 @@ export default function Hiragana() {
                     ))}
                 </div>
             </div>
+            {won && <Confetti  mode='boom' colors={["#3838fa", "#7997f7", "#901aaa", "#ffe6f7"]} />}
         </div>
     )
 }
