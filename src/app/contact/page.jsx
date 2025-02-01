@@ -72,7 +72,7 @@ const PrevMessages = ({messages}) => (
         </TableHeader>
         <TableBody>
         {messages.map((message, index) => (
-            <TableRow key={index}>
+            <TableRow key={message+index}>
             <TableCell>{message.name}</TableCell>
             <TableCell>{message.message}</TableCell>
             <TableCell>{message.createdAt.toString().slice(4,15)}</TableCell>

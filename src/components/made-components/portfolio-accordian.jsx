@@ -48,7 +48,7 @@ export async function TechAccordian() {
             <Accordion type="single" collapsible>
             {techAccordianItems.map((tech,i) => {
                 return (                                      
-                    <AccordionItem  key={i+2} value={"item-"+i}>
+                    <AccordionItem  key={tech.name+i} value={"item-"+i}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {tech.icon}{tech.name}
                         </AccordionTrigger>
@@ -79,7 +79,7 @@ export async function PlatformAccordian(params) {
             <Accordion type="single" collapsible>
             {platformAccordianItems.map((plat,index) => {
                 return (                                      
-                    <AccordionItem  key={index*2} value={"item-"+index}>
+                    <AccordionItem  key={plat.name+index} value={"item-"+index}>
                         <AccordionTrigger className="text-2xl font-thin">
                             {plat.icon}{plat.name}
                         </AccordionTrigger>
@@ -226,11 +226,11 @@ const fireBody = () => (<div>
 const stars = (numOfStars = 1) => (
     <div className="flex">
     {Array.from({ length: numOfStars }, (_, i) => (
-        <MdOutlineStar key={i} />
+        <MdOutlineStar key={"fullstar"+i} />
     ))}
     {numOfStars%1===0 ? "" : <MdOutlineStarHalf />}
     {Array.from({ length: 5-numOfStars }, (_, i) => (
-        <MdOutlineStarBorder key={i} />
+        <MdOutlineStarBorder key={"emptystar"+i} />
     ))}
     </div>
 )

@@ -28,7 +28,7 @@ export async function BottomNav() {
         <div className="md:pb-0 text-nowrap flex flex-row gap-5">
             {navItems.map((item, index) => (
                 <>
-                    <Link href={item.path} key={index*10} className='flex flex-col justify-center'>
+                    <Link href={item.path} key={item.name+index} className='flex flex-col justify-center'>
                         <div className='flex justify-center'>{item.icon}</div>
                         <div className="">{item.name}</div>
                     </Link>
