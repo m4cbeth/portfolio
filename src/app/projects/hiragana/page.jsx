@@ -55,16 +55,18 @@ export default function Hiragana() {
         <div className='m-1 p-1'>
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
-            <div className="flex gap-5">
+            <div className="flex flex-col gap-5">
                 <div>
                     Pick a number of cards to see
                 </div>
                 <form onSubmit={handleSubmit}>
                     <Input type="number" value={inputValue} onChange={handleChange} />
-                    <Button type='submit' onClick={generate}>Generate</Button>
+                    <div className="flex gap-5 my-3">
+                        <Button variant="secondary" className="flex-1" onClick={clearGame}>Clear</Button>
+                        <Button className="flex-1" type='submit' onClick={generate}>Generate</Button>
+                    </div>
                 </form>
             </div>
-            <Button onClick={clearGame}>Clear</Button>
             <div className="flex justify-center">
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center '>
                     {arrToMap.map((symbol, index) => (
@@ -100,14 +102,14 @@ const Card = ({ front, back, remainingToCorrect, setRemaining, setWon}) => {
       <div className="flip-card-inner relative w-full h-full border">
         
         {/* Front Side */}
-        <div className={`hover:cursor-pointer ${gotit ? "text-green-500": "text-white"} flip-card-front text-4xl flex items-center justify-center bg-slate-900  font-light rounded-lg shadow-lg`}
+        <div className={`hover:cursor-pointer font-semibold ${gotit ? "text-green-500": "text-white"} flip-card-front text-6xl flex items-center justify-center bg-slate-900  font-light rounded-lg shadow-lg`}
         onClick={flip}
         >
           {front}
         </div>
 
         {/* Back Side */}
-        <div className="flip-card-back flex flex-col items-center justify-center bg-slate-950 text-white text-4xl font-light rounded-lg shadow-lg"
+        <div className="flip-card-back flex flex-col items-center justify-center bg-slate-950 text-white text-4xl font-thin rounded-lg shadow-lg"
         
         >
           <div>{back}</div>
