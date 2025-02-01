@@ -9,7 +9,14 @@ import Confetti from 'react-confetti-boom';
 const symbols = hiraganaData
 
 const generateNcards = (x) => {
-    const arr = new Array(x).fill(true).map(()=>Math.round(Math.random()*symbols.length))
+    const getUniqueNumbers = (x, max) => {
+        const uniqueNumbers = new Set()
+        while (uniqueNumbers.size < x) {
+            uniqueNumbers.add(Math.floor(Math.random() * max))
+        }
+        return Array.from(uniqueNumbers)
+    }
+    const arr = getUniqueNumbers(x, symbols.length)
     const selection = arr.map((x)=>symbols[x])
     return selection
 }
@@ -23,6 +30,10 @@ export default function Hiragana() {
         setInput(e.target.value)
     }
     const generate = () => {
+        if (inputValue > 100) {
+            alert('less than 100 cowboy')
+            return
+        }
         if (inputValue == "") return
         setArr([])
         setWon(false)
@@ -36,23 +47,28 @@ export default function Hiragana() {
         setInput("")
         setWon(false)
     }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
 
     return (
-        <div className='m-5 p-5'>
+        <div className='m-1 p-1'>
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
             <div className="flex gap-5">
                 <div>
                     Pick a number of cards to see
                 </div>
-                <Input type="number" value={inputValue} onChange={handleChange} />
-                <Button onClick={generate}>Generate</Button>
+                <form onSubmit={handleSubmit}>
+                    <Input type="number" value={inputValue} onChange={handleChange} />
+                    <Button type='submit' onClick={generate}>Generate</Button>
+                </form>
             </div>
             <Button onClick={clearGame}>Clear</Button>
             <div className="flex justify-center">
-                <div className='grid grid-cols-3 gap-4 justify-items-center '>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center '>
                     {arrToMap.map((symbol, index) => (
-                        <Card won={won} setWon={setWon} remainingToCorrect={remainingToCorrect} setRemaining={setRemaining} key={`${symbol.roumaji}-${index}`} front={symbol.kana} back={symbol.roumaji} />
+                        <Card setWon={setWon} remainingToCorrect={remainingToCorrect} setRemaining={setRemaining} key={`${symbol.roumaji}-${index}`} front={symbol.kana} back={symbol.roumaji} />
                     ))}
                 </div>
             </div>
@@ -62,7 +78,7 @@ export default function Hiragana() {
 }
 
 
-const Card = ({ front, back, remainingToCorrect, setRemaining, won, setWon}) => {
+const Card = ({ front, back, remainingToCorrect, setRemaining, setWon}) => {
   const [flipped, setFlipped] = useState(false);
   const [gotit, setGotit] = useState(false)
   
@@ -79,12 +95,12 @@ const Card = ({ front, back, remainingToCorrect, setRemaining, won, setWon}) => 
 
   return (
     <div 
-      className={`flip-card  w-64 h-48 ${flipped ? "flipped" : ""} `}       
+      className={`flip-card  w-36 h-32 ${flipped ? "flipped" : ""} `}       
     >
       <div className="flip-card-inner relative w-full h-full border">
         
         {/* Front Side */}
-        <div className={`hover:cursor-pointer ${gotit ? "text-green-500": "text-white"} flip-card-front flex items-center justify-center bg-slate-900  text-6xl font-light rounded-lg shadow-lg`}
+        <div className={`hover:cursor-pointer ${gotit ? "text-green-500": "text-white"} flip-card-front text-4xl flex items-center justify-center bg-slate-900  font-light rounded-lg shadow-lg`}
         onClick={flip}
         >
           {front}
@@ -95,10 +111,10 @@ const Card = ({ front, back, remainingToCorrect, setRemaining, won, setWon}) => 
         
         >
           <div>{back}</div>
-          <div className="w-full flex justify-around mt-2 text-lg font-mono">
-            <Button className="bg-green-500 px-4 py-2 rounded" onClick={getit}><Circle/></Button>
-            <Button variant="secondary" onClick={flip}><RotateCcw /></Button>
-            <Button className="bg-red-500 px-4 py-2 rounded" onClick={flip}><X/></Button>
+          <div className="w-full flex justify-around mt-2 font-mono">
+            <Button siz="small" className="bg-green-500 px-4 py-2 rounded " onClick={getit}><Circle/></Button>
+            <Button siz="small" variant="secondary" onClick={flip}><RotateCcw /></Button>
+            <Button siz="small" className="bg-red-500 px-4  rounded " onClick={flip}><X/></Button>
           </div>
         </div>
       </div>
