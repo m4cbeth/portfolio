@@ -178,8 +178,8 @@ const tailwindBody = () => (
 const gitBody = () => (
 <div>
     I learned the basics of git a long time ago, and for a long time used it for nothing more than cloning, forking, basic tracking (the
-    classic amateur git add . && git commit -m "beign message" && git push, that accomplishes almost nothing). But then I started to push 
-    myself to branch out a little bit, pun intended! For the past while, I've been getting into the practice of using branches to organize
+    classic amateur git add . && git commit -m "beign message" && git push, that accomplishes almost nothing). But then I started 
+    to <i>pushed</i> myself to <i>branch</i> out a little bit, puns intended! For the past while, I've been getting into the practice of using branches to organize
     the work being done on a project. Previously, I'd be haphazardly making changes to 10 different files for 20 different reasons and 
     making commits with messages like, "have no clue, forgot what I&apos;m even doing". Also, learning the hard way, several times over
     many years to make many small commits along the way. Save scumming if you will. Shameful perhaps in some gaming circles, but a life 
