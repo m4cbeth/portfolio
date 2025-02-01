@@ -37,8 +37,10 @@ export default function Hiragana() {
     }
 
     return (
-        <div className='m-5 p-5'>
-            {won && <Confetti className="z-[99999999999999999]" mode='boom' colors={["#3838fa", "#7997f7", "#901aaa", "#ffe6f7"]} />}
+        <div className='m-5 p-5 z-10'>
+            {won && <div className="z-50">
+                <Confetti  mode='boom' colors={["#3838fa", "#7997f7", "#901aaa", "#ffe6f7"]} />
+            </div>}
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
             <div className="flex gap-5">
@@ -49,10 +51,10 @@ export default function Hiragana() {
                 <Button onClick={generate}>Generate</Button>
             </div>
             <Button onClick={clearGame}>Clear</Button>
-            <div className="flex justify-center">
+            <div className="flex justify-center z-20">
                 <div className='grid grid-cols-3 gap-4 justify-items-center '>
                     {arrToMap.map((symbol, index) => (
-                        <Card won={won} setWon={setWon} remainingToCorrect={remainingToCorrect} setRemaining={setRemaining} key={parseInt(symbol.roumaji*index)} front={symbol.kana} back={symbol.roumaji} />
+                        <Card won={won} setWon={setWon} remainingToCorrect={remainingToCorrect} setRemaining={setRemaining} key={`${symbol.roumaji}-${index}`} front={symbol.kana} back={symbol.roumaji} />
                     ))}
                 </div>
             </div>
