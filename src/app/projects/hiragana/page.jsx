@@ -5,6 +5,7 @@ import hiraganaData from '@/data/hiragana.json'
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import Confetti from 'react-confetti-boom';
+import clsx from 'clsx';
 
 const symbols = hiraganaData
 
@@ -85,7 +86,10 @@ const Card = ({ front, back, remainingToCorrect, setRemaining, won, setWon}) => 
       <div className="flip-card-inner relative w-full h-full border">
         
         {/* Front Side */}
-        <div className={`hover:cursor-pointer ${gotit ? "text-green-500": ""} flip-card-front flex items-center justify-center bg-slate-900 text-white text-6xl font-light rounded-lg shadow-lg`}
+        <div className={clsx(
+            "hover:cursor-pointer flip-card-front flex items-center justify-center bg-slate-900 text-white text-6xl font-light rounded-lg shadow-lg",
+            gotit && "text-green-500"
+        )}
         onClick={flip}
         >
           {front}
