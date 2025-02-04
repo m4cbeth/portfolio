@@ -2,17 +2,65 @@
     {
         "name": "Leo's Caesar",
         "glass": "Caesar rimmed Jar",
-        "liquor": ["1oz Smirnoff Vodka"],
-        "mix": ["1.5oz Caesar Premix"],
-        "garmnish": ["Straw", "Lime", "Pickle Spear"]
+        "liquor": ["1oz Smirnoff"],
+        "mix": ["1.5oz Caesar Premix", "7oz Clamato"],
+        "garnish": ["Straw", "Lime", "Pickle Spear"]
     },
     {
         "name": "Buffalo Dill Caesar",
         "glass": "Buffalo Rimmed Jar",
-        "liquor": "1 oz Dill Infused Vodka",
-        "garmnish": ["Straw", "Lime", "Pickle Spear", "Buff Dill Set"]
+        "liquor": "1 oz Dill Vodka",
+        "mix": ["1oz Buffalo Premix", "8oz Clamato"],
+        "garnish": ["Straw", "Lime", "Pickle Spear", "Buff Dill Set"]
     },
     {
-        
-    }
+        "name": "Shaft",
+        "glass": "DBL Rocks",
+        "liquor": ["0.5oz Smirnoff", "0.5oz Baileys"],
+        "mix": ["Cold Brew"],
+        "garnish": ["Straw"]
+    },
+    {
+        "name": "Lime Margarita",
+        "glass": "DBL Rocks - Half Rim Kosher",
+        "liquor": ["1.5oz Cuervo", "0.5oz Triple Sec"],
+        "mix": ["2oz Lime", "1oz Simple"],
+        "garnish": ["Lime"]
+    },
+    {
+        "name": "Strawberry Peach Margarita",
+        "glass": "DBL Rocks - Half Rim Kosher",
+        "liquor": ["1.5oz Cuervo", "0.5oz Triple Sec"],
+        "mix": ["2oz Strawberry Peach", "1oz Lime"],
+        "garnish": ["Lime"]
+    },
+    {
+        "name": "Spicy Mango Margarita",
+        "glass": "DBL Rocks - Half Rim Spicy",
+        "liquor": ["1.5oz Cuervo", "0.5oz Triple Sec"],
+        "mix": ["2oz Mango Jalapeno", "1oz Lime"],
+        "garnish": ["Lime"]
+    },
+    {
+        "name": "Pineapple Coconut Margarita",
+        "glass": "DBL Rocks - Half Rim Kosher",
+        "liquor": ["1.5oz Cuervo", "0.5oz Triple Sec"],
+        "mix": ["2oz Pineapple Coconut"],
+        "garnish": ["Pineapple Wedge"]
+    },
+    {
+        "name": "",
+        "glass": "",
+        "liquor": [],
+        "mix": [],
+        "garnish": []
+    },
+    {
+        "name": "",
+        "glass": "",
+        "liquor": [],
+        "mix": [],
+        "garnish": []
+    },
+
 ]
