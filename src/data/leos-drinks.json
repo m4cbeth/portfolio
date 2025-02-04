@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Leo's Caesar",
+        "glass": "Caesar rimmed Jar",
+        "liquor": ["1oz Smirnoff Vodka"],
+        "mix": ["1.5oz Caesar Premix"],
+        "garmnish": ["Straw", "Lime", "Pickle Spear"]
+    },
+    {
+        "name": "Buffalo Dill Caesar",
+        "glass": "Buffalo Rimmed Jar",
+        "liquor": "1 oz Dill Infused Vodka",
+        "garmnish": ["Straw", "Lime", "Pickle Spear", "Buff Dill Set"]
+    },
+    {
+        
+    }
+]
