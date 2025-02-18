@@ -12,6 +12,10 @@ export async function generateMetadata({params}) {
   }
 }
 
+/*
+
+*/
+
 export default async function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
