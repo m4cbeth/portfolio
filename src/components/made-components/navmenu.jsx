@@ -4,6 +4,7 @@ import { RiHomeLine } from "react-icons/ri";
 import { RiInformationLine } from "react-icons/ri";
 import { RiMailLine } from "react-icons/ri";
 import { Separator } from '@/components/ui/separator';
+import React from 'react';
 
 
 export default async function NavMenuItems(){
@@ -26,15 +27,15 @@ export async function BottomNav() {
     ]
     return (
         <div className="md:pb-0 text-nowrap flex flex-row gap-5">
-            {navItems.map((item, index) => (
-                <>
-                    <Link href={item.path} key={item.name+index} className='flex flex-col justify-center'>
+            {navItems.map((item, index) =>
+                <React.Fragment key={`nav-${item.name}-${index}`}>
+                    <Link href={item.path} className='flex flex-col justify-center'>
                         <div className='flex justify-center'>{item.icon}</div>
                         <div className="">{item.name}</div>
                     </Link>
                     {index < navItems.length-1 ? <Separator key={`sep${index}`} orientation='vertical'/> : ""}
-                </>
-            ))}
+                </React.Fragment>
+            )}
         </div>
 
     )
