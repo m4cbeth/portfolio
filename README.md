@@ -1,3 +1,16 @@
+# Personal Portfolio Website
+
+Hey there bucko. Past you here. Just spent a couple days tracking this down. Remember that the hardest thing in coding is naming things and we've had many false starts. So trying to find, "personal website" or "portfolio" or "jaren.com" was a bit painful.
+
+Remember, yes, the commit history might look like it's focused on weird little side projects, that's what you think this is everytime, some older "porfolio".
+
+But this is your website you silly goose.
+
+Now start treating it like such.
+
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
