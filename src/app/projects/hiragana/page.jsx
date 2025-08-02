@@ -55,12 +55,14 @@ export default function Hiragana() {
         <div className='m-1 p-1 min-h-[75vh] container mx-auto'>
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
-            <div className="flex flex-col gap-5 my-5">
-                <div className='flex justify-between'>
-                    <div>Pick a number of cards to see</div>
-                    {arrToMap.length > 0 && <Button variant="secondary" onClick={clearGame}>Clear</Button>}
+            <div className="flex flex-col gap-5 my-5 max-w-80 mx-auto">
+                <div className='flex flex-col justify-between items-center'>
+                    <div className='pb-3'>Pick a number of cards to see</div>
+                    <div>
+                        {arrToMap.length > 0 && <Button variant="secondary" onClick={clearGame}>Clear</Button>}
+                    </div>
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form className='max-w-60 mx-auto border' onSubmit={handleSubmit}>
                     <Input type="number" value={inputValue} onChange={handleChange} />
                     <div className="flex gap-5 my-3">
                         <Button className="flex-1" type='submit' onClick={generate}>Generate</Button>
