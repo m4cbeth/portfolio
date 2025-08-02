@@ -1,17 +1,18 @@
 import { TechAccordian, PlatformAccordian } from "@/components/made-components/portfolio-accordian";
+import Head from "next/head";
 
 export default function About() {
     return (               
-        <div className="mx-5">
-            <div className="">
+        <div className="container mx-auto">
+            <Head>
                 <title>About Jaren</title>
-                <h1 className="text-5xl font-black pt-3">
-                    about me
-                </h1>
-                <h2 className=" font-thin text-3xl pb-5">
-                    My Current Strong Suites
-                </h2>
-            </div>
+            </Head>
+            <h1 className="text-5xl font-black pt-3">
+                about me
+            </h1>
+            <h2 className=" font-thin text-3xl pb-5">
+                My Current Strong Suites
+            </h2>
             <section>
                 <div className="flex flex-col md:justify-center gap-10 mx-5">
                     <div className="flex-1">
