@@ -52,7 +52,7 @@ export default function Hiragana() {
     }
 
     return (
-        <div className='m-1 p-1 min-h-[75vh]'>
+        <div className='m-1 p-1 min-h-[75vh] container mx-auto'>
             <h1 className='text-3xl font-black '>Hiragana</h1>
             <h2 className='text-xl font-thin mb-5'>A small project for a bro</h2>
             <div className="flex flex-col gap-5 my-5">
