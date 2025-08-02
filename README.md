@@ -8,6 +8,8 @@ But this is your website you silly goose.
 
 Now start treating it like such.
 
+Oh and I would like to add this as a note for a pull request.
+
 
 ---
 
