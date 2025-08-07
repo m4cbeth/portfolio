@@ -96,7 +96,7 @@ export default async function Contact() {
     return (
         <div>
             <title>Contact Jaren Whitehouse</title>   
-            <div className="container mx-auto max-w-3xl p-5 rounded-xl">
+            <div className="container mx-auto max-w-3xl border p-5 rounded-xl">
                 <h1 className="text-5xl font-black">
                 Get in touch!
                 </h1>
