@@ -16,7 +16,7 @@ export default async function Header({ThemeButton}) {
                     JW
                 </div>
             </Link>
-            <div className="flex-1 pb-2 ">
+            <div className="flex-1 pb-2 font-thin">
                 <div className="md:inline-block hidden">
                     <NavMenuItems/>
                 </div>

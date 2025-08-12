@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
       </head>
-      <body className="w-full">
+      <body className="w-full min-h-screen">
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
