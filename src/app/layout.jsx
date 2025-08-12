@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
       </head>
-      <body className="w-full min-h-screen">
+      <body className="w-full min-h-screen flex flex-col">
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
@@ -30,7 +30,7 @@ export default async function RootLayout({ children }) {
         header={Header}
       >
           <Header ThemeButton={ThemeButton} />
-          {children}
+          <div className="flex-1">{children}</div>
           <Footer />
           <div className='md:hidden bg-inherit py-5 sticky bottom-0 border-t w-full z-[45] flex justify-center align-middle'>
             <BottomNav/>

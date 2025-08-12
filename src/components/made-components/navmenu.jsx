@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RiToolsLine } from "react-icons/ri";
+import { RiPagesLine } from "react-icons/ri";
 import { RiHomeLine } from "react-icons/ri";
 import { RiInformationLine } from "react-icons/ri";
 import { RiMailLine } from "react-icons/ri";
@@ -13,6 +14,7 @@ export default async function NavMenuItems(){
             <Link href="/"        className="no-underline text-lg md:text-lg hover:text-accent">HOME</Link > &nbsp;| &nbsp;
             <Link href="/about"   className="no-underline text-lg md:text-lg hover:text-accent">ABOUT</Link > &nbsp;| &nbsp;
             <Link href="/projects"   className="no-underline text-lg md:text-lg hover:text-accent">PROJECTS</Link > &nbsp;| &nbsp;
+            <Link href="/blog"   className="no-underline text-lg md:text-lg hover:text-accent">BLOG</Link > &nbsp;| &nbsp;
             <Link href="/contact" className="no-underline text-lg md:text-lg hover:text-accent">CONTACT</Link >
         </div>
     )
@@ -21,8 +23,9 @@ export default async function NavMenuItems(){
 export async function BottomNav() {
     const navItems = [
         {name: "Home", path: "/", icon: <RiHomeLine  /> },
-        {name: "Projects", path: "/projects", icon: <RiToolsLine  /> },
         {name: "About", path: "/about", icon: <RiInformationLine   /> },
+        {name: "Projects", path: "/projects", icon: <RiToolsLine  /> },
+        {name: "Blog", path: "/blog", icon: <RiPagesLine /> },
         {name: "Contact", path: "/contact", icon: <RiMailLine    /> },
     ]
     return (
